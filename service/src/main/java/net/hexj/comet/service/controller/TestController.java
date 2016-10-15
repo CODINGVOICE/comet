@@ -21,6 +21,7 @@ public class TestController {
 
   @RequestMapping(value = "/test", method = RequestMethod.GET)
   public MessageWrapper test() {
+    testMapper.query();
     return new MessageWrapper(MessageWrapper.SC_OK,
         localeMessageService.getMessage("server.internal.error"), null);
   }
